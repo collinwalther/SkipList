@@ -9,7 +9,6 @@ struct Node {
 
 class SkipList {
   private:
-    unsigned _length;
     unsigned _height;
     Node *_head;
 
@@ -22,7 +21,6 @@ class SkipList {
 };
 
 SkipList::SkipList() {
-    _length = 0;
     _height = 1;
     _head = new Node;
     _head->height = 1;
