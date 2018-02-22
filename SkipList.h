@@ -1,19 +1,19 @@
 #include <cstdlib>
 #include <iostream>
 
-struct Node {
-    int key;
-    unsigned height;
-    struct Node **links;
-};
-
 class SkipList {
   private:
     unsigned _height;
+    struct Node {
+        int key;
+        unsigned height;
+        struct Node **links;
+    };
     Node *_head;
 
   public:
     SkipList();
+    ~SkipList();
     bool find(int);
     bool insert(int);
     bool deleteElement(int);
@@ -26,6 +26,15 @@ SkipList::SkipList() {
     _head->height = 1;
     _head->links = (Node **) malloc(sizeof(Node *) * 1);
     _head->links[0] = NULL;
+}
+
+SkipList::~SkipList() {
+    Node *curr = _head;
+    while (curr != NULL) {
+        Node *temp = curr;
+        curr = curr->links[0];
+        delete temp;
+    }
 }
 
 bool SkipList::find(int elt) {
@@ -138,7 +147,7 @@ bool SkipList::deleteElement(int elt) {
 }
 
 std::ostream &operator<<(std::ostream &o, const SkipList &list) {
-    Node *currNode = list._head;
+    SkipList::Node *currNode = list._head;
     while (currNode != NULL) {
         o << currNode->key << "\t";
         for (int i = 0; i < currNode->height; i++) {
