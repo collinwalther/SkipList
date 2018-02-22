@@ -11,7 +11,7 @@ int main(int argc, char *args[]) {
         if(scanf(" %c", &c) == EOF) {
             break;
         } else if (c == 'p') {
-            std::cout << l << std::endl;
+            cout << l << endl;
         } else if (c == 'i') {
             int elt;
             scanf(" %d", &elt);
@@ -19,13 +19,13 @@ int main(int argc, char *args[]) {
         } else if (c == 'f') {
             int elt;
             scanf(" %d", &elt);
-            std::cout << l.find(elt) << std::endl;
+            cout << l.find(elt) << endl;
         } else if (c == 'd') {
             int elt;
             scanf(" %d", &elt);
-            std::cout << l.deleteElement(elt) << endl;
+            cout << l.deleteElement(elt) << endl;
         } else {
-            std::cout << "bruh" << std::endl;
+            cout << "bruh" << endl;
         }
     }
 }
