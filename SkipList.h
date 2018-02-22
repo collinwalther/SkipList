@@ -1,8 +1,6 @@
 #include <cstdlib>
 #include <iostream>
 
-using std::endl;
-
 struct Node {
     int key;
     unsigned height;
