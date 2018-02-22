@@ -4,6 +4,7 @@
 #include <vector>
 #include <math.h>
 
+using std::cout;
 using std::endl;
 using std::rand;
 
@@ -40,7 +41,7 @@ void SkipListTest(int n) {
         }
     }
 
-    std::cout << l << std::endl;
+    cout << l << endl;
 }
 
 void NaiveTest(int n) {
